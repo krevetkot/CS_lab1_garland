@@ -18,5 +18,6 @@ typedef enum {
 void led_set(Led led, bool on);   /* включить/выключить один светодиод */
 void led_toggle(Led led);         /* переключить один светодиод */
 void led_set_mask(uint8_t mask);  /* выставить все сразу: бит 1 — горит */
+void led_init(void);              /* настроить ножки светодиодов (все погашены) */
 
 #endif /* LED_H */

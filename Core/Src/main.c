@@ -92,6 +92,8 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
+  led_init();
+  button_init();
   garland_init();
 
   /* USER CODE END 2 */

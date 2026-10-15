@@ -1,4 +1,5 @@
-../Core/Src/button.c:13:13:read_raw	1
-../Core/Src/button.c:18:6:button_update	5
-../Core/Src/button.c:39:6:button_is_pressed	1
-../Core/Src/button.c:44:6:button_was_pressed	1
+../Core/Src/button.c:14:6:button_init	1
+../Core/Src/button.c:19:13:read_raw	1
+../Core/Src/button.c:24:6:button_update	5
+../Core/Src/button.c:45:6:button_is_pressed	1
+../Core/Src/button.c:50:6:button_was_pressed	1

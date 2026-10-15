@@ -1,0 +1,8 @@
+../Core/Src/gpio_drv.c:6:6:gpio_drv_enable_clock	24	static
+../Core/Src/gpio_drv.c:13:6:gpio_drv_init	64	static
+../Core/Src/gpio_drv.c:50:6:gpio_drv_get_config	24	static
+../Core/Src/gpio_drv.c:61:6:gpio_drv_write	16	static
+../Core/Src/gpio_drv.c:68:6:gpio_drv_write_masked	24	static
+../Core/Src/gpio_drv.c:75:6:gpio_drv_toggle	24	static
+../Core/Src/gpio_drv.c:81:10:gpio_drv_read	16	static
+../Core/Src/gpio_drv.c:86:6:gpio_drv_read_pin	16	static

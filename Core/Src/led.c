@@ -1,34 +1,35 @@
 #include "led.h"
-#include "main.h"
-#include <stdbool.h>
+#include "pin.h"
 
-typedef struct {
-    GPIO_TypeDef *port;
-    uint16_t      pin;
-} LedPin;
-
-static const LedPin led_pins[LED_COUNT] = {
-    [LED_GREEN]  = { GPIOD, GPIO_PIN_13 },
-    [LED_YELLOW] = { GPIOD, GPIO_PIN_14 },
-    [LED_RED]    = { GPIOD, GPIO_PIN_15 },
+/* Подключение светодиодов — единственное место, где упоминаются ножки */
+static const Pin led_pins[LED_COUNT] = {
+    [LED_GREEN]  = { GPIOD, 13 },
+    [LED_YELLOW] = { GPIOD, 14 },
+    [LED_RED]    = { GPIOD, 15 },
 };
 
-bool ledIsValid(uint8_t led){
-	if (led >= LED_COUNT) return false;
-	return true;
+static bool ledIsValid(uint8_t led)
+{
+    return led < LED_COUNT;
+}
+
+void led_init(void)
+{
+    for (int i = 0; i < LED_COUNT; i++) {
+        pin_init_output(&led_pins[i], false);   /* сразу «0» — светодиод не мигнёт при старте */
+    }
 }
 
 void led_set(Led led, bool on)
 {
     if (!ledIsValid(led)) return;
-    HAL_GPIO_WritePin(led_pins[led].port, led_pins[led].pin,
-                      on ? GPIO_PIN_SET : GPIO_PIN_RESET);   /* 1 — горит */
+    pin_write(&led_pins[led], on);   /* «1» — горит */
 }
 
 void led_toggle(Led led)
 {
     if (!ledIsValid(led)) return;
-    HAL_GPIO_TogglePin(led_pins[led].port, led_pins[led].pin);
+    pin_toggle(&led_pins[led]);
 }
 
 void led_set_mask(uint8_t mask)

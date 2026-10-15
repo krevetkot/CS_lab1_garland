@@ -1,4 +1,5 @@
-../Core/Src/led.c:16:6:ledIsValid	2
-../Core/Src/led.c:21:6:led_set	2
-../Core/Src/led.c:28:6:led_toggle	2
-../Core/Src/led.c:34:6:led_set_mask	2
+../Core/Src/led.c:11:13:ledIsValid	1
+../Core/Src/led.c:16:6:led_init	2
+../Core/Src/led.c:23:6:led_set	2
+../Core/Src/led.c:29:6:led_toggle	2
+../Core/Src/led.c:35:6:led_set_mask	2

@@ -1,0 +1,5 @@
+../Core/Src/pin_drv.c:7:6:pin_init_output	24	static
+../Core/Src/pin_drv.c:20:6:pin_init_input	24	static
+../Core/Src/pin_drv.c:35:6:pin_write	16	static
+../Core/Src/pin_drv.c:40:6:pin_toggle	16	static
+../Core/Src/pin_drv.c:45:6:pin_read	16	static
